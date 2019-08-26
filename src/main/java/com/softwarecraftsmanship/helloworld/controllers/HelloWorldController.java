@@ -1,6 +1,6 @@
-package com.example.demo.controllers;
+package com.softwarecraftsmanship.helloworld.controllers;
 
-import com.example.demo.services.HelloWorldService;
+import com.softwarecraftsmanship.helloworld.services.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

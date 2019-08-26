@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.softwarecraftsmanship.helloworld;
 
-import com.example.demo.services.HelloWorldService;
+import com.softwarecraftsmanship.helloworld.services.HelloWorldService;
 import org.junit.Assert;
 import org.junit.Test;
 
