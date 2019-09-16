@@ -1,13 +1,13 @@
-package com.softwarecraftsmanship.helloworld;
+package com.softwarecraftsmanship;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class SoftwareCraftsmanship {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(SoftwareCraftsmanship.class, args);
 	}
 
 }

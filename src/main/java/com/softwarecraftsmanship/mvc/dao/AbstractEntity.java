@@ -1,4 +1,4 @@
-package com.softwarecraftsmanship.mvc.models;
+package com.softwarecraftsmanship.mvc.dao;
 
 import lombok.Data;
 
