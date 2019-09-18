@@ -13,14 +13,20 @@ public class IdeaFactory {
     IdeaRepository ideaRepository;
 
     public Idea getIdea(Long id) {
-        if (id == 0) {
-            Idea ideaObj = new Idea();
-            Date date = new Date();
-            ideaObj.setCreatedDate(date);
-            ideaObj.setModifiedDate(date);
-            return ideaObj;
-        } else {
-            return ideaRepository.findFirstById(id);
+        Idea ideaObj = null;
+
+        if (id != 0) {
+            ideaObj = ideaRepository.findFirstById(id);
         }
+
+        if (ideaObj == null){
+            ideaObj = new Idea();
+        }
+
+        Date date = new Date();
+        ideaObj.setCreatedDate(date);
+        ideaObj.setModifiedDate(date);
+
+        return ideaObj;
     }
 }

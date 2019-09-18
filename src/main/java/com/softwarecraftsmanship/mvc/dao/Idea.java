@@ -15,9 +15,9 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Idea extends AbstractEntity {
-    public String idea;
-    public int score;
-    public int thumbsUpCount;
-    public int thumbsDownCount;
-    public String description;
+    private String idea;
+    private Integer score;
+    private Integer thumbsUpCount;
+    private Integer thumbsDownCount;
+    private String description;
 }
