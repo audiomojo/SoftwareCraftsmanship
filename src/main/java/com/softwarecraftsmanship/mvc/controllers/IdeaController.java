@@ -16,13 +16,10 @@ public class IdeaController {
     IdeaService ideaService;
     @RequestMapping("/addEditIdea")
     public Idea addEditIdea(@RequestParam(value = "idea") String idea,
-                            @RequestParam(value = "score") int score,
-                            @RequestParam(value = "thumbsUpCount") int thumbsUpCount,
-                            @RequestParam(value = "thumbsDownCount") int thumbsDownCount,
                             @RequestParam(value = "description") String description,
                             @RequestParam(value = "id", defaultValue = "0") Long id) {
 
-        return ideaService.addEditIdea(idea, score, thumbsUpCount, thumbsDownCount, description, id);
+        return ideaService.addEditIdea(idea, description, id);
     }
 
     @RequestMapping("/getIdeas")
@@ -30,13 +27,13 @@ public class IdeaController {
         return ideaService.getIdeas();
     }
 
-    @RequestMapping("/getIdeasByScore")
-    public List<Idea> getIdeasByScore(){
-        return ideaService.getIdeasByScore();
-    }
-
-    @RequestMapping("incrementScore")
-    public Idea incrementScore(@RequestParam(value = "id") Long id) {
-        return ideaService.incrementScore(id);
-    }
+//    @RequestMapping("/getIdeasByScore")
+//    public List<Idea> getIdeasByScore(){
+//        return ideaService.getIdeasByScore();
+//    }
+//
+//    @RequestMapping("incrementScore")
+//    public Idea incrementScore(@RequestParam(value = "id") Long id) {
+//        return ideaService.incrementScore(id);
+//    }
 }

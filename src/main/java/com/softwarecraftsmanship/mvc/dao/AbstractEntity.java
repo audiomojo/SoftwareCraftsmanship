@@ -17,7 +17,7 @@ public class AbstractEntity {
     private Date createdDate;
     private Date modifiedDate;
 
-    public int compareTo(AbstractEntity abstractEntity) {
-        return getCreatedDate().compareTo(abstractEntity.getCreatedDate());
+//        return getCreatedDate().compareTo(abstractEntity.getCreatedDate());
     }
-}
+
+//

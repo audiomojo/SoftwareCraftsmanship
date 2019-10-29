@@ -18,16 +18,13 @@ public class IdeaService {
     @Autowired
     IdeaRepository ideaRepository;
 
-    public Idea addEditIdea(String idea, int score, int thumbsUpCount, int thumbsDownCount, String description, Long id) {
+    public Idea addEditIdea(String idea, String description, Long id) {
         Idea ideaObj = ideaFactory.getIdea(id);
 
         ideaObj.setIdea(idea);
-        ideaObj.setScore(score);
-        ideaObj.setThumbsUpCount(thumbsUpCount);
-        ideaObj.setThumbsDownCount(thumbsDownCount);
         ideaObj.setDescription(description);
-
         ideaRepository.save(ideaObj);
+
 
         return ideaObj;
     }
@@ -36,17 +33,17 @@ public class IdeaService {
         return ideaRepository.findAllBy();
     }
 
-    public List<Idea> getIdeasByScore() {
-        List<Idea> ideaList = getIdeas();
-        return ideaList.stream().sorted(Comparator.comparingInt(Idea::getScore).reversed()).collect(Collectors.toList());
-    }
+//    public List<Idea> getIdeasByScore() {
+//        List<Idea> ideaList = getIdeas();
+//        return ideaList.stream().sorted(Comparator.comparingInt((Idea::(getThumbsUpCount)+(Idea::(getThumbsDownCount)).reversed()).collect(Collectors.toList());
+//    }
 
-    public Idea incrementScore(Long id) {
-        Idea idea = ideaRepository.findFirstById(id);
-
-        idea.setScore(idea.getScore()+1);
-        ideaRepository.save(idea);
-
-        return idea;
-    }
+//    public Idea incrementScore(Long id) {
+//        Idea idea = ideaRepository.findFirstById(id);
+//
+//        idea.setScore(idea.getScore()+1);
+//        ideaRepository.save(idea);
+//
+//        return idea;
+//    }
 }

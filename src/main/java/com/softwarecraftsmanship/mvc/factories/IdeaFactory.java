@@ -14,6 +14,7 @@ public class IdeaFactory {
 
     public Idea getIdea(Long id) {
         Idea ideaObj = null;
+        Date date = new Date();
 
         if (id != 0) {
             ideaObj = ideaRepository.findFirstById(id);
@@ -21,10 +22,13 @@ public class IdeaFactory {
 
         if (ideaObj == null){
             ideaObj = new Idea();
+            ideaObj.setCreatedDate(date);
+            ideaObj.setThumbsUpCount(0);
+            ideaObj.setThumbsDownCount(0);
         }
 
-        Date date = new Date();
-        ideaObj.setCreatedDate(date);
+
+
         ideaObj.setModifiedDate(date);
 
         return ideaObj;
